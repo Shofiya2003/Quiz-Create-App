@@ -10,14 +10,21 @@
 html,body{
   height: 100%;
 }
+.action-button{
+  padding: 12px;
+}
 
-h1{
+p{
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
 .bg-dark-black{
   background-color: var(--black-700);
+}
+
+.controls{
+  width: 81%;
 }
 
 #root{
@@ -66,11 +73,18 @@ h1{
   padding: 12px;
 }
 
+.delete-button{
+  background-color: red;
+  margin-bottom: 20px;
+}
+
 .bg-light{
   background-color: var(--black-200);
 }
 
-
+.submit-button{
+  background-color: green;
+}
 
 .text-white{
   color: white;
@@ -80,15 +94,19 @@ h1{
   font-weight: 400;
   margin-top: 12px;
   margin-bottom: 1.5px;
+  font-size: 28px;
 }
 
-.question-section{
+.question-section,.controls{
   flex-direction: column;
   width: 81%;
 }
+
+
 .question-section input, select,textarea{
   padding: 16px;
-  margin-bottom: 18px;
+  margin-bottom: 12px;
+  color: white;
 }
 
 .question-section textarea{
@@ -99,6 +117,12 @@ h1{
 .round-border{
   border: none;
   border-radius: 10px;
+}
+
+.nav-button{
+  flex: 1;
+  padding: 12px;
+  margin-bottom: 24px;
 }
 
 
