@@ -6,6 +6,8 @@ import NavButton from './NavButton'
 export default function QuizCard() {
     const [date,setDate]=useState("");
     const [quizArr,setQuizArr]=useState([]);
+    const [options,setOptions]=useState([{},{},{},{}]);
+    const [currentQuestion,setCurrentQuestion]=useState({});
 
     //add a question
     const onAdd=()=>{
@@ -22,10 +24,35 @@ export default function QuizCard() {
             return [...prev];
         })
     }
-    
+
+    //update options
+    const updateOptions=(e)=>{
+        const {id,value}=e.target;
+        console.log(id);
+        const newOption={
+            value,
+            opted_by:"0"
+        }
+        console.log(newOption);
+        const idx=id-1;
+        setOptions((prev)=>{
+            return [...prev.slice(0,idx),newOption,...prev.slice(idx+1)]
+        })
+       
+    }
+
+    //update the current question
+    const updateCurrentQuestionDetails=(e)=>{
+        const property=e.target.name;
+        const value=e.target.value;
+        setCurrentQuestion(prev=>{
+            return {...prev,[property]:value}
+        })
+    }
+
     useEffect(()=>{
-        console.log(quizArr);
-    },[quizArr])
+        console.log(currentQuestion);
+    },[currentQuestion])
   return (
     <main className='quiz-card full flex items-center'>
         <Date value={date} onChange={(e)=>{
@@ -33,19 +60,23 @@ export default function QuizCard() {
         }}></Date>
         <p className='question-heading'>Ouestion {quizArr.length+1}</p>
         <section className='question-section flex items-center'>
-            <input className='bg-light round-border full-width text-white' placeholder='Question' type="text" name="question" id="question" />
+            <input className='bg-light round-border full-width text-white' placeholder='Question' type="text" name="question" onChange={(e)=>{
+                updateCurrentQuestionDetails(e);
+            }} id="question" />
             <div className='full-width'>
                 <div className='options-subsection flex'>
-                    <Option></Option>
-                    <Option></Option>
+                    <Option id={1} text={"First"} onChange={updateOptions}></Option>
+                    <Option id={2} text={"Second"} onChange={updateOptions}></Option>
                 </div>
                 <div className='options-subsection flex'>
-                    <Option></Option>
-                    <Option></Option>
+                    <Option id={3} text={"Third"} onChange={updateOptions}></Option>
+                    <Option id={4} text={"Fourth"} onChange={updateOptions}></Option>
                 </div>
             </div>
-            <OptionSelector></OptionSelector>
-            <textarea className='bg-light round-border full-width' placeholder='Hint'></textarea>
+            <OptionSelector options={options} onChange={updateCurrentQuestionDetails}></OptionSelector>
+            <textarea className='bg-light round-border full-width' name='hint' placeholder='Hint' onChange={(e)=>{
+                updateCurrentQuestionDetails(e);
+            }}></textarea>
             <input className='bg-light round-border full-width file' type="file" />
         </section>
         <section className='controls'>
