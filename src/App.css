@@ -47,6 +47,10 @@ html,body{
   color: white;
 }
 
+.question-heading{
+  font-weight: 400;
+}
+
 .round-border{
   border: none;
   border-radius: 10px;
