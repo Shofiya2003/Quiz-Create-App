@@ -1,9 +1,9 @@
 import React from 'react'
-import Date from './Date'
+import QuizCard from './QuizCard'
 export default function Main() {
   return (
-    <div>
-        <Date></Date>
-    </div>
+      <div>
+          <QuizCard></QuizCard>
+      </div>
   )
 }
