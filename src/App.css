@@ -11,6 +11,11 @@ html,body{
   height: 100%;
 }
 
+h1{
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 .bg-dark-black{
   background-color: var(--black-700);
 }
@@ -36,6 +41,9 @@ html,body{
 }
 .flex{
   display: flex;
+}
+.file{
+  width: 43%;
 }
 .justify-center{
   justify-content: center;
@@ -70,15 +78,22 @@ html,body{
 
 .question-heading{
   font-weight: 400;
+  margin-top: 12px;
+  margin-bottom: 1.5px;
 }
 
 .question-section{
   flex-direction: column;
   width: 81%;
 }
-.question-section input{
+.question-section input, select,textarea{
   padding: 16px;
   margin-bottom: 18px;
+}
+
+.question-section textarea{
+  resize: none;
+  padding: 21px;
 }
 
 .round-border{

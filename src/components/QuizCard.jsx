@@ -1,6 +1,7 @@
 import React from 'react'
 import Date from './Date'
 import Option from './Option'
+import OptionSelector from './OptionSelector'
 export default function QuizCard() {
   return (
     <main className='quiz-card full flex items-center'>
@@ -18,7 +19,9 @@ export default function QuizCard() {
                     <Option></Option>
                 </div>
             </div>
-
+            <OptionSelector></OptionSelector>
+            <textarea className='bg-light round-border full-width' placeholder='Hint'></textarea>
+            <input className='bg-light round-border full-width file' type="file" />
         </section>
     </main>
   )
