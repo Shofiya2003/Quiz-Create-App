@@ -15,6 +15,10 @@ html,body{
   min-height: 100vh;
 }
 
+.full-width{
+  width: 100%;
+}
+
 .full{
   min-height: 100vh;
 }
@@ -39,8 +43,11 @@ html,body{
 
 .date{
   width: 213px;
-  background-color: var(--black-200);
   padding: 12px;
+}
+
+.bg-light{
+  background-color: var(--black-200);
 }
 
 .text-white{
@@ -49,6 +56,14 @@ html,body{
 
 .question-heading{
   font-weight: 400;
+}
+
+.question-section{
+  flex-direction: column;
+  width: 81%;
+}
+.question-section input{
+  padding: 16px;
 }
 
 .round-border{
