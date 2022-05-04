@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 :root{
   --black-700:#171010;
   --black-200:#2B2B2B;
@@ -7,12 +10,21 @@
 html,body{
   height: 100%;
 }
+
 .bg-dark-black{
   background-color: var(--black-700);
 }
 
 #root{
   min-height: 100vh;
+}
+
+.option{
+  flex: 1;
+}
+
+.options-subsection{
+  gap: 14px;
 }
 
 .full-width{
@@ -50,6 +62,8 @@ html,body{
   background-color: var(--black-200);
 }
 
+
+
 .text-white{
   color: white;
 }
@@ -64,6 +78,7 @@ html,body{
 }
 .question-section input{
   padding: 16px;
+  margin-bottom: 18px;
 }
 
 .round-border{
