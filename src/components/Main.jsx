@@ -2,7 +2,7 @@ import React from 'react'
 import QuizCard from './QuizCard'
 export default function Main() {
   return (
-      <div>
+      <div className='bg-dark-black full'>
           <QuizCard></QuizCard>
       </div>
   )

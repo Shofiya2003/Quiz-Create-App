@@ -1,7 +1,56 @@
+:root{
+  --black-700:#171010;
+  --black-200:#2B2B2B;
+  --black-500:#1b1a1a;
+}
+
 html,body{
   height: 100%;
+}
+.bg-dark-black{
+  background-color: var(--black-700);
 }
 
 #root{
   min-height: 100vh;
 }
+
+.full{
+  min-height: 100vh;
+}
+.flex{
+  display: flex;
+}
+.justify-center{
+  justify-content: center;
+}
+.items-center{
+  align-items: center;
+}
+
+.quiz-card{
+  width: 40%;
+  margin:auto;
+  background-color: var(--black-500);
+  color: white;
+  padding-top: 16px;
+  flex-direction: column;
+}
+
+.date{
+  width: 213px;
+  background-color: var(--black-200);
+  padding: 12px;
+}
+
+.text-white{
+  color: white;
+}
+
+.round-border{
+  border: none;
+  border-radius: 10px;
+}
+
+
+
