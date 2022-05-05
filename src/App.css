@@ -1,129 +1,144 @@
-*{
+* {
   box-sizing: border-box;
 }
-:root{
-  --black-700:#171010;
-  --black-200:#2B2B2B;
-  --black-500:#1b1a1a;
+:root {
+  --black-700: #171010;
+  --black-200: #2b2b2b;
+  --black-500: #1b1a1a;
 }
 
-html,body{
+html,
+body {
   height: 100%;
 }
-.action-button{
+.action-button {
   padding: 12px;
+  cursor: pointer;
 }
 
-p{
+p {
   margin-block-start: 0;
   margin-block-end: 0;
 }
 
-.bg-dark-black{
+.bg-dark-black {
   background-color: var(--black-700);
 }
 
-.controls{
+.controls {
   width: 81%;
 }
 
-#root{
+#root {
   min-height: 100vh;
 }
 
-.option{
+.option {
   flex: 1;
 }
 
-.options-subsection{
+.options-subsection {
   gap: 14px;
 }
 
-.full-width{
+.full-width {
   width: 100%;
 }
 
-.full{
+.full {
   min-height: 100vh;
 }
-.flex{
+.flex {
   display: flex;
 }
-.file{
+.file {
   width: 43%;
 }
-.justify-center{
+.justify-center {
   justify-content: center;
 }
-.items-center{
+.items-center {
   align-items: center;
 }
 
-.quiz-card{
+.quiz-card {
   width: 40%;
-  margin:auto;
+  margin: auto;
   background-color: var(--black-500);
   color: white;
   padding-top: 16px;
   flex-direction: column;
 }
 
-.date{
+.date {
   width: 213px;
   padding: 12px;
 }
 
-.delete-button{
+.delete-button {
   background-color: red;
   margin-bottom: 20px;
 }
 
-.bg-light{
+.bg-light {
   background-color: var(--black-200);
 }
 
-.submit-button{
+.submit-button {
   background-color: green;
 }
 
-.text-white{
+.text-white {
   color: white;
 }
 
-.question-heading{
+.question-heading {
   font-weight: 400;
   margin-top: 12px;
   margin-bottom: 1.5px;
   font-size: 28px;
 }
 
-.question-section,.controls{
+.question-section,
+.controls {
   flex-direction: column;
   width: 81%;
 }
 
-
-.question-section input, select,textarea{
-  padding: 14px;
-  margin-bottom: 12px;
+.question-section input,
+select,
+textarea {
+  padding: 16px;
+  margin-bottom: 14px;
   color: white;
 }
+input.file {
+  padding: 12px;
+  margin-top: 12px;
+}
 
-.question-section textarea{
+input.First,
+input.Second {
+  margin-bottom: 18px;
+}
+
+.question-section textarea {
   resize: none;
   padding: 21px;
 }
 
-.round-border{
+.round-border {
   border: none;
   border-radius: 10px;
 }
 
-.nav-button{
+.nav-button {
   flex: 1;
   padding: 12px;
   margin-bottom: 24px;
+  cursor: pointer;
 }
 
-
-
+option{
+  padding: 14px;
+}

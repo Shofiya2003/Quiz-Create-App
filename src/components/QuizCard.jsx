@@ -1,17 +1,16 @@
 import React,{useState,useEffect} from 'react'
 import Date from './Date'
-import Option from './Option'
+import OptionsSection from './OptionsSection'
 import OptionSelector from './OptionSelector'
 import NavButton from './NavButton'
 import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify';
+import { validateCurrentQuestion,errToast } from './util'
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 
 export default function QuizCard() {
     const [date,setDate]=useState("");
     const [quizArr,setQuizArr]=useState([{hint:"",answer:"",question:"",answered_by:"0",options:[{},{},{},{}]}]);
-
 
     //add a question
     const onAdd=()=>{
@@ -78,31 +77,11 @@ export default function QuizCard() {
         })
     }
 
-   
-
-    const validateCurrentQuestion=(currentQuestion)=>{
-        if(!currentQuestion.question && (currentQuestion.question==="")){
-            toast("Write Question")
-            return false;
-        }
-        const remainingOptions=currentQuestion.options.filter(option=>{
-            return !option.value
-        });
-        if(remainingOptions.length!==0){
-            toast("Write All the Options")
-            return false;
-        }
-        if(!currentQuestion.answer && (currentQuestion.answer==="")){
-            toast("Select Answer to the question")
-            return false;
-        }
-        return true;
-    }
-
+  
     //submit
     const submit =()=>{
         if(date===""){
-            toast("Select a Date")
+            errToast("Date cannot be empty");
         }
         if(validateCurrentQuestion(quizArr[quizArr.length-1])){
             
@@ -134,16 +113,7 @@ export default function QuizCard() {
             <input className='bg-light round-border full-width text-white' value={quizArr[quizArr.length-1].question} placeholder='Question' type="text" name="question" onChange={(e)=>{
                 updateCurrentQuestionDetails(e);
             }} id="question" />
-            <div className='full-width'>
-                <div className='options-subsection flex'>
-                    <Option id={1} value={quizArr[quizArr.length-1].options[0].value || ""} text={"First"} onChange={updateOptions}></Option>
-                    <Option id={2} text={"Second"} value={quizArr[quizArr.length-1].options[1].value || ""}  onChange={updateOptions}></Option>
-                </div>
-                <div className='options-subsection flex'>
-                    <Option id={3} text={"Third"} value={quizArr[quizArr.length-1].options[2].value || ""} onChange={updateOptions}></Option>
-                    <Option id={4} text={"Fourth"} value={quizArr[quizArr.length-1].options[3].value || ""} onChange={updateOptions}></Option>
-                </div>
-            </div>
+            <OptionsSection updateOptions={updateOptions} quizArr={quizArr}></OptionsSection>
             <OptionSelector options={quizArr[quizArr.length-1].options} value={quizArr[quizArr.length-1].answer} onChange={updateCurrentQuestionDetails}></OptionSelector>
             <textarea className='bg-light round-border full-width' value={quizArr[quizArr.length-1].hint} name='hint' placeholder='Hint' onChange={(e)=>{
                 updateCurrentQuestionDetails(e);

@@ -8,10 +8,10 @@ export default function OptionSelector(props) {
     }} id="">
       <option value="Select Answer">Select Answer</option>
         {options.map((option,idx)=>{
-          if(option.value){
-            return  <option key={idx} id={idx} value={idx+1}>{option.value}</option>
-          }
-          return null;
+          
+          return  <option key={idx} id={idx} value={idx+1}>{idx+1}</option>
+          
+          
         })}
     </select>
   )
