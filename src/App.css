@@ -1,4 +1,6 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 :root {
@@ -7,9 +9,12 @@
   --black-500: #1b1a1a;
 }
 
-html,
-body {
+
+html {
   height: 100%;
+}
+body {
+  min-height: 100%;
 }
 .action-button {
   padding: 12px;
@@ -63,6 +68,8 @@ p {
 
 .quiz-card {
   width: 40%;
+  min-width: 580px;
+  min-height: 800px;
   margin: auto;
   background-color: var(--black-500);
   color: white;
@@ -86,6 +93,7 @@ p {
 
 .submit-button {
   background-color: green;
+  margin-bottom: 12px;
 }
 
 .text-white {

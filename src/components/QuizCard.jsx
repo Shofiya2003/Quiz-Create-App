@@ -58,7 +58,7 @@ export default function QuizCard() {
         setQuizArr((prev)=>{
             const currentQuestion=prev[prev.length-1];
             const options=currentQuestion.options;
-            currentQuestion.options=[...options.slice(0,idx),newOption,...options.slice(idx+1)];
+            options[idx]=newOption;
             prev.pop();
             return [...prev,currentQuestion]
         });

@@ -16,7 +16,7 @@ const validateCurrentQuestion=(currentQuestion)=>{
     }
 
     if(checkDuplicateOptions(currentQuestion.options)){
-        errToast("Write all the options");
+        errToast("Options have to be unique");
         return false;
     }
    
