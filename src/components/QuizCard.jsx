@@ -91,11 +91,14 @@ export default function QuizCard() {
                 quiz:quizArr
             }).then(msg=>{
                 console.log(msg);
+                if(msg.status===200){
+                    setQuizArr([{hint:"",answer:"",question:"",answered_by:"0",options:[{},{},{},{}]}]);
+                    setDate("");
+                }
             }).catch(err=>{
                 console.log(err.response);
             })
-            setQuizArr([{hint:"",answer:"",question:"",answered_by:"0",options:[{},{},{},{}]}]);
-            setDate("");
+            
         }
     }
 
