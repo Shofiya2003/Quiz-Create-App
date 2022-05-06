@@ -69,7 +69,7 @@ p {
 .quiz-card {
   width: 40%;
   min-width: 580px;
-  min-height: 800px;
+  min-height: 715px;
   margin: auto;
   background-color: var(--black-500);
   color: white;

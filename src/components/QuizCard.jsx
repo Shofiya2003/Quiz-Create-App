@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Date from './Date'
 import OptionsSection from './OptionsSection'
 import OptionSelector from './OptionSelector'
-import NavButton from './NavButton'
+import Controls from './Controls'
 import axios from 'axios'
 import { validateCurrentQuestion,errToast } from './util'
 import { ToastContainer} from 'react-toastify';
@@ -82,6 +82,7 @@ export default function QuizCard() {
     const submit =()=>{
         if(date===""){
             errToast("Date cannot be empty");
+            return;
         }
         if(validateCurrentQuestion(quizArr[quizArr.length-1])){
             
@@ -120,14 +121,7 @@ export default function QuizCard() {
             }}></textarea>
             <input className='bg-light round-border full-width file' type="file" />
         </section>
-        <section className='controls'>
-            <div className='round-border full-width delete-button action-button flex justify-center' onClick={deleteQuestion}>Delete</div>
-             <div className='flex full-width' style={{"gap":"52px"}}>
-                <NavButton onClick={onAdd} text={"Add Question"}></NavButton>
-                <NavButton onClick={onRemove} text={"Remove Last Question"}></NavButton>
-             </div>
-            <div className='round-border full-width submit-button action-button flex justify-center' onClick={submit}>Submit</div>
-        </section>
+       <Controls onAdd={onAdd} onRemove={onRemove} deleteQuestion={deleteQuestion} submit={submit}></Controls>
         <ToastContainer></ToastContainer>
     </main>
   )
